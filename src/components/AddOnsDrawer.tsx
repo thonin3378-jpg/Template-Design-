@@ -150,7 +150,13 @@ function AddOnCard({ addOn }: { addOn: AddOn }) {
           {addOn.monogram}
         </span>
         <div style={{ flex: 1, minInlineSize: 0 }}>
-          <div style={{ fontSize: "14.5px", fontWeight: 800, letterSpacing: "-.01em" }}>
+          <div
+            style={{
+              fontSize: "14.5px",
+              fontWeight: 800,
+              letterSpacing: "-.01em",
+            }}
+          >
             {addOn.name}
           </div>
           <div
@@ -175,7 +181,11 @@ function AddOnCard({ addOn }: { addOn: AddOn }) {
             background: on ? "var(--pos-soft)" : "var(--surface-2)",
           }}
         >
-          {t(on ? "addon.host.manage.connected" : "addon.host.manage.notConnected")}
+          {t(
+            on
+              ? "addon.host.manage.connected"
+              : "addon.host.manage.notConnected",
+          )}
         </span>
       </div>
 
@@ -208,13 +218,25 @@ function AddOnCard({ addOn }: { addOn: AddOn }) {
         <div style={{ display: "grid", gap: "10px" }}>
           <div>
             <Eyebrow>{t("addon.host.manage.goes")}</Eyebrow>
-            <div style={{ fontSize: "12.5px", color: "var(--fg-muted)", lineHeight: 1.5 }}>
+            <div
+              style={{
+                fontSize: "12.5px",
+                color: "var(--fg-muted)",
+                lineHeight: 1.5,
+              }}
+            >
               {t(addOn.disconnect.goesKey as MessageKey)}
             </div>
           </div>
           <div>
             <Eyebrow>{t("addon.host.manage.stays")}</Eyebrow>
-            <div style={{ fontSize: "12.5px", color: "var(--fg-muted)", lineHeight: 1.5 }}>
+            <div
+              style={{
+                fontSize: "12.5px",
+                color: "var(--fg-muted)",
+                lineHeight: 1.5,
+              }}
+            >
               {t(addOn.disconnect.staysKey as MessageKey)}
             </div>
           </div>
@@ -239,7 +261,8 @@ function AddOnCard({ addOn }: { addOn: AddOn }) {
           slot="settings.add-on.panel"
           forAddOn={addOn.key}
           payload={{
-            patch: (values: Record<string, unknown>) => patchAddOnSettings(addOn.key, values),
+            patch: (values: Record<string, unknown>) =>
+              patchAddOnSettings(addOn.key, values),
             /*
              * WHAT THE SHOP KNOWS AND NO ADD-ON DOES: its own catalogue, one
              * row per family. Nothing is estimated here — an add-on with an
@@ -336,7 +359,14 @@ export function AddOnsDrawer() {
       >
         <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
           <div style={{ flex: 1, minInlineSize: 0 }}>
-            <h2 style={{ margin: 0, fontSize: "19px", fontWeight: 800, letterSpacing: "-.02em" }}>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: "19px",
+                fontWeight: 800,
+                letterSpacing: "-.02em",
+              }}
+            >
               {t("addon.host.manage.title")}
             </h2>
             <p
@@ -381,7 +411,8 @@ export function AddOnsDrawer() {
             padding: "14px 16px",
             borderRadius: "14px",
             background: "var(--accent-soft)",
-            border: "1px solid color-mix(in srgb, var(--accent) 22%, transparent)",
+            border:
+              "1px solid color-mix(in srgb, var(--accent) 22%, transparent)",
           }}
         >
           <Icon
